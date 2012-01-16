@@ -92,8 +92,9 @@
           }).popover({
             html: true,
             content: (function() {
-              return a['data-content'] = gen_player(item.id);
-            })
+              return gen_player(item.id);
+            }),
+            placement: 'below'
           });
           make_img(a, item.id);
           return $('#results_list').append(li.append(a));

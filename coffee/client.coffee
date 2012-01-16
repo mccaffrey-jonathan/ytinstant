@@ -1,14 +1,4 @@
-#yt_url = 'https://gdata.youtube.com/feeds/api/videos'
-#http://img.youtube.com/vi/VIDEO_ID/#.jpg
-
-query_chunk_size = 8*6
-
-#        """
-#        <iframe
-#        #width="240"
-#        #height="180"
-#        frameborder="0" ></iframe>
-#        """
+query_chunk_size = 8*6 #max is 50
 
 $(document).ready ->
     LOG = (txt) -> $('#scratch').get(0).innerHTML = txt
@@ -103,8 +93,8 @@ $(document).ready ->
                     href: yt_player item,
                 }).popover({
                     html: true,
-                    content: (->
-                        a['data-content'] = gen_player item.id)
+                    content: (-> gen_player item.id),
+                    placement: 'below',
                 })
 
                 make_img a, item.id
@@ -112,10 +102,6 @@ $(document).ready ->
 
             set_search_finished search_state, opts2
 
-                    
-                #LOG body
-
-        #$.get yt_url, {'q': 'skateboard', 'max-results': 10}, LOG
     slow_log = _.debounce ((local_search_state, event) ->
         not_searching = local_search_state.status == search_state.TYPING ||
             local_search_state.status == search_state.READY

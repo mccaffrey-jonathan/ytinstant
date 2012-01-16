@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="http://twitter.github.com/bootstrap/1.4.0/bootstrap.min.css">
@@ -14,10 +15,13 @@
         <div class="container"> 
             <div class="topbar" data-scrollspy="scrollspy" data-dropdown="dropdown">
                 <div class="topbar-inner">
-                    <div class="container" >
-                        <h3 class="brand">Simple YouTube Instant Search</h3>
-                        <form class="pull-left" action>
-                            <input type="text" placeholder="Search Youtube" class="xlarge" size="30" id="search_bar"/>
+                    <div class="container"> 
+                        <h3 class="brand">Simple YouTube Instant Search </h3>
+                        <ul class="nav"> </ul>
+                        <form onsubmit="return false;" class="pull-left" action="">
+                            <input type="text" 
+                                id="search_bar"
+                                placeholder="Search YouTube" />
                         </form>
                     </div>
                 </div>
